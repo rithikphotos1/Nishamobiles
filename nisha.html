@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Your trusted local mobile phone shop for smartphones, accessories and repairs." />
+  <title>NISHA MOBILES | Mobile Shop</title>
+
+  <style>
+    :root {
+      --primary: #6c4cff;
+      --primary-dark: #5134d4;
+      --dark: #111827;
+      --text: #374151;
+      --muted: #6b7280;
+      --light: #f6f7fb;
+      --white: #ffffff;
+      --green: #20c76a;
+      --red: #ef4444;
+      --border: #e5e7eb;
+      --shadow: 0 12px 35px rgba(17, 24, 39, 0.09);
+      --radius: 20px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+ body {
+      font-family: Inter, Arial, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+gap: 10px;
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--dark);
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), #9b7cff);
+      font-size: 21px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    nav a {
+      font-size: 14px;
+      font-weight: 600;
+      color: #4b5563;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .nav-btn {
+      background: var(--dark);
+      color: white !important;
+      padding: 10px 17px;
+      border-radius: 10px;
+    }
+
+    .menu {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      background:
+        radial-gradient(circle at 80% 20%, rgba(108,76,255,.18), transparent 30%),
+        linear-gradient(135deg, #f8f7ff, #fff);
+      padding: 85px 0 75px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .badge {
+      display: inline-flex;
+      background: #eeeaff;
+      color: var(--primary);
+      padding: 7px 13px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      color: var(--dark);
+      font-size: clamp(40px, 6vw, 68px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      max-width: 580px;
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 21px;
+      border-radius: 12px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: .2s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+ .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: white;
+      border-color: var(--border);
+      color: var(--dark);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .phone-card {
+      position: relative;
+      width: min(360px, 90%);
+      margin: auto;
+      padding: 12px;
+      border-radius: 35px;
+      background: #151515;
+      box-shadow: 0 30px 60px rgba(0,0,0,.2);
+      transform: rotate(3deg);
+    }
+
+    .phone-screen {
+      min-height: 570px;
+      border-radius: 27px;
+      overflow: hidden;
+      background: linear-gradient(145deg, #251c58, #765cff);
+      color: white;
+      padding: 35px 25px;
+      position: relative;
+    }
+
+    .phone-screen::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.12);
+      right: -90px;
+      bottom: 50px;
+    }
+
+    .phone-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      opacity: .8;
+    }
+
+    .phone-content {
+      position: absolute;
+      left: 25px;
+      bottom: 40px;
+    }
+
+    .phone-content small {
+      opacity: .8;
+    }
+
+    .phone-content h2 {
+      font-size: 35px;
+      line-height: 1.1;
+      margin: 5px 0;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 85px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-head h2 {
+      color: var(--dark);
+      font-size: 38px;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+    }
+
+    /* FEATURES */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .feature {
+      padding: 27px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      background: #eeeaff;
+      color: var(--primary);
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+
+    .feature h3 {
+      color: var(--dark);
+      margin-bottom: 7px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* PRODUCTS */
+    .products-section {
+      background: var(--light);
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .product {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      transition: .25s;
+    }
+
+    .product:hover {
+      transform: translateY(-6px);
+    }
+
+    .product-img {
+      height: 245px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #f1efff, #fafafa);
+      font-size: 90px;
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+.product-info h3 {
+      color: var(--dark);
+      margin-bottom: 5px;
+    }
+
+    .product-info p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .price {
+      color: var(--primary);
+      font-size: 21px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .small-btn {
+      display: block;
+      text-align: center;
+      padding: 10px;
+      background: #f0edff;
+      color: var(--primary);
+      border-radius: 9px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* OFFER */
+    .offer {
+      background: linear-gradient(120deg, #171126, #30216b);
+      border-radius: 30px;
+      padding: 50px;
+      color: white;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .offer h2 {
+      font-size: 40px;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .offer p {
+      color: #d7d0f3;
+    }
+
+    .offer .btn {
+      background: white;
+      color: var(--dark);
+    }
+
+    /* SERVICES */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .service-icon {
+      font-size: 36px;
+      margin-bottom: 14px;
+    }
+
+    .service h3 {
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .service p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* REVIEWS */
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .review {
+      padding: 28px;
+      background: var(--light);
+      border-radius: var(--radius);
+    }
+
+    .stars {
+      color: #f59e0b;
+      margin-bottom: 13px;
+    }
+
+    .review p {
+      color: var(--text);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .review strong {
+      color: var(--dark);
+    }
+
+    /* CONTACT */
+    .contact-section {
+      background: var(--light);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 25px;
+    }
+
+    .contact-card,
+    .map-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 15px;
+      margin: 22px 0;
+    }
+
+    .contact-item-icon {
+      width: 43px;
+      height: 43px;
+      flex: 0 0 43px;
+      display: grid;
+      place-items: center;
+      background: #eeeaff;
+      border-radius: 12px;
+    }
+
+    .contact-item h4 {
+      color: var(--dark);
+    }
+
+    .contact-item p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .map-placeholder {
+      min-height: 330px;
+      border-radius: 15px;
+      background:
+        linear-gradient(rgba(108,76,255,.08), rgba(108,76,255,.08)),
+        repeating-linear-gradient(45deg, #e8e8e8 0 2px, transparent 2px 35px);
+      display: grid;
+      place-items: center;
+      text-align: center;
+    }
+.map-placeholder div {
+      background: white;
+      padding: 22px;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0e1117;
+      color: white;
+      padding: 50px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 35px;
+    }
+
+    footer h3 {
+      margin-bottom: 13px;
+    }
+
+    footer p,
+    footer a {
+      color: #9ca3af;
+      font-size: 14px;
+    }
+
+    footer a {
+      display: block;
+      margin: 7px 0;
+    }
+
+    .copyright {
+      border-top: 1px solid #252932;
+      padding-top: 20px;
+      color: #6b7280;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    /* WHATSAPP */
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--green);
+      color: white;
+      font-size: 27px;
+      box-shadow: 0 10px 30px rgba(32,199,106,.35);
+      z-index: 999;
+      transition: .2s;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.08);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .features,
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services,
+      .reviews {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .nav {
+        height: 68px;
+      }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background: white;
+        flex-direction: column;
+        align-items: stretch;
+        box-shadow: 0 15px 30px rgba(0,0,0,.08);
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        padding: 9px;
+      }
+
+      .menu {
+        display: block;
+      }
+
+      .hero {
+        padding: 60px 0;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+      }
+
+      .phone-card {
+        transform: none;
+      }
+
+      .features,
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .offer {
+        padding: 35px 25px;
+        grid-template-columns: 1fr;
+      }
+
+      .offer h2 {
+        font-size: 31px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .section-head h2 {
+        font-size: 31px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+  <header>
+    <div class="container nav">
+<!-- CHANGE SHOP NAME HERE -->
+      <a href="#home" class="logo">
+        <span class="logo-icon">📱</span>
+        <span>NISHA MOBILES</span>
+      </a>
+
+      <button class="menu" onclick="toggleMenu()">☰</button>
+
+      <nav id="nav">
+        <a href="#home">Home</a>
+        <a href="#mobiles">Mobiles</a>
+        <a href="#services">Services</a>
+        <a href="#offers">Offers</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-btn" href="tel:+919876543210">Call Now</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+  <main>
+
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div class="hero-content">
+          <span class="badge">📍 Your Local Mobile Store</span>
+
+          <h1>
+            Find Your<br>
+            <span>Perfect Phone.</span>
+          </h1>
+
+          <p>
+            Smartphones, accessories and professional mobile repair services
+            — all under one roof at the best local prices.
+          </p>
+
+          <div class="buttons">
+            <a href="#mobiles" class="btn btn-primary">
+              📱 View Mobiles
+            </a>
+
+            <a href="https://wa.me/919876543210?text=Hello%20I%20want%20to%20know%20about%20your%20mobile%20phones."
+               class="btn btn-outline">
+              💬 WhatsApp Us
+            </a>
+          </div>
+        </div>
+
+        <div class="phone-card">
+          <div class="phone-screen">
+            <div class="phone-top">
+              <span>9:41</span>
+              <span>● ● ●</span>
+            </div>
+
+            <div class="phone-content">
+              <small>NEW ARRIVAL</small>
+              <h2>Latest<br>Smartphones</h2>
+              <p>Available Now</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         FEATURES
+    ========================== -->
+    <section>
+      <div class="container">
+
+        <div class="features">
+
+          <div class="feature">
+            <div class="feature-icon">📱</div>
+            <h3>Latest Mobiles</h3>
+            <p>Popular smartphones from leading brands.</p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">💰</div>
+            <h3>Best Prices</h3>
+            <p>Competitive local prices and special offers.</p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">🔧</div>
+            <h3>Expert Repairs</h3>
+            <p>Professional service for common mobile problems.</p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">🛡️</div>
+            <h3>Trusted Service</h3>
+            <p>Friendly support before and after your purchase.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         PRODUCTS
+    ========================== -->
+    <section class="products-section" id="mobiles">
+      <div class="container">
+<div class="section-head">
+          <h2>Popular Mobiles</h2>
+          <p>Some of our popular models</p>
+        </div>
+
+        <div class="products">
+
+          <div class="product">
+            <div class="product-img">📱</div>
+            <div class="product-info">
+              <h3>Premium Phone</h3>
+              <p>8GB RAM • 256GB Storage</p>
+              <div class="price">₹39,999</div>
+              <a class="small-btn"
+                 href="https://wa.me/919876543210?text=I%20am%20interested%20in%20the%20Premium%20Phone.">
+                Enquire Now
+              </a>
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="product-img">📱</div>
+            <div class="product-info">
+              <h3>Pro Smartphone</h3>
+              <p>12GB RAM • 256GB Storage</p>
+              <div class="price">₹29,999</div>
+              <a class="small-btn"
+                 href="https://wa.me/919876543210?text=I%20am%20interested%20in%20the%20Pro%20Smartphone.">
+                Enquire Now
+              </a>
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="product-img">📱</div>
+            <div class="product-info">
+              <h3>Smartphone Plus</h3>
+              <p>8GB RAM • 128GB Storage</p>
+              <div class="price">₹19,999</div>
+              <a class="small-btn"
+                 href="https://wa.me/919876543210?text=I%20am%20interested%20in%20the%20Smartphone%20Plus.">
+                Enquire Now
+              </a>
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="product-img">📱</div>
+            <div class="product-info">
+              <h3>Budget Smartphone</h3>
+              <p>6GB RAM • 128GB Storage</p>
+              <div class="price">₹12,999</div>
+              <a class="small-btn"
+                 href="https://wa.me/919876543210?text=I%20am%20interested%20in%20the%20Budget%20Smartphone.">
+                Enquire Now
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         OFFER
+    ========================== -->
+    <section id="offers">
+      <div class="container">
+
+        <div class="offer">
+          <div>
+            <h2>🔥 Special Store Offers</h2>
+            <p>
+              Visit our store for today's latest deals, exchange offers
+              and accessories.
+            </p>
+          </div>
+
+          <a href="https://wa.me/919876543210?text=Hello%2C%20please%20send%20me%20today%27s%20offers."
+             class="btn">
+            Get Today's Offers
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         SERVICES
+    ========================== -->
+    <section id="services">
+      <div class="container">
+
+        <div class="section-head">
+          <h2>Our Services</h2>
+          <p>More than just a mobile shop</p>
+        </div>
+
+        <div class="services">
+
+          <div class="service">
+            <div class="service-icon">🔧</div>
+            <h3>Mobile Repair</h3>
+ <p>
+              Screen, battery, charging, software and other common
+              mobile repairs.
+            </p>
+          </div>
+
+          <div class="service">
+            <div class="service-icon">🎧</div>
+            <h3>Accessories</h3>
+            <p>
+              Cases, screen protectors, chargers, cables, earbuds and more.
+            </p>
+          </div>
+
+          <div class="service">
+            <div class="service-icon">🔄</div>
+            <h3>Exchange</h3>
+            <p>
+              Bring your old phone and ask us about available exchange
+              options.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         REVIEWS
+    ========================== -->
+    <section id="reviews">
+      <div class="container">
+
+        <div class="section-head">
+          <h2>What Customers Say</h2>
+          <p>Customer reviews</p>
+        </div>
+
+        <div class="reviews">
+
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>
+              "Good service and friendly staff. They helped me choose
+              the right phone for my budget."
+            </p>
+            <strong>— Customer</strong>
+          </div>
+
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>
+              "Quick repair service and reasonable pricing. Very convenient
+              local shop."
+            </p>
+            <strong>— Customer</strong>
+          </div>
+
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>
+              "Good selection of phones and accessories. Staff were helpful."
+            </p>
+            <strong>— Customer</strong>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+
+        <div class="section-head">
+          <h2>Visit Our Shop</h2>
+          <p>Come in and let us help you find the right phone.</p>
+        </div>
+
+        <div class="contact-grid">
+
+          <div class="contact-card">
+
+            <div class="contact-item">
+              <div class="contact-item-icon">📍</div>
+              <div>
+                <h4>Address</h4>
+                <p>
+                  Main Road, Your Town,<br>
+                  Tamil Nadu, India
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">📞</div>
+              <div>
+                <h4>Phone</h4>
+                <p>
+                  <a href="tel:+919876543210">+91 98765 43210</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">🕐</div>
+              <div>
+                <h4>Opening Hours</h4>
+                <p>
+                  Monday – Sunday<br>
+                  9:00 AM – 9:00 PM
+                </p>
+</div>
+            </div>
+
+            <div class="buttons">
+              <a href="tel:+919876543210" class="btn btn-primary">
+                📞 Call Shop
+              </a>
+
+              <a href="https://wa.me/919876543210"
+                 class="btn btn-outline">
+                💬 WhatsApp
+              </a>
+            </div>
+
+          </div>
+
+
+          <div class="map-card">
+            <div class="map-placeholder">
+              <div>
+                <div style="font-size:42px;">📍</div>
+                <h3>Find Us on Google Maps</h3>
+                <p style="color:#6b7280; margin:6px 0 15px;">
+                  Replace this button with the shop's actual Google Maps link.
+                </p>
+
+                <!-- REPLACE THIS LINK -->
+                <a href="https://www.google.com/maps"
+                   target="_blank"
+                   class="btn btn-primary">
+                  Get Directions
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <footer>
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <h3>📱 NISHA MOBILES</h3>
+          <p>
+            Your trusted local destination for smartphones,
+            accessories and mobile services.
+          </p>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+          <a href="#home">Home</a>
+          <a href="#mobiles">Mobiles</a>
+          <a href="#services">Services</a>
+          <a href="#offers">Offers</a>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <a href="tel:+919876543210">📞 +91 98765 43210</a>
+          <a href="https://wa.me/919876543210">💬 WhatsApp</a>
+          <a href="#contact">📍 Visit Store</a>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        © <span id="year"></span> NISHA MOBILES. All rights reserved.
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a
+    class="whatsapp"
+    href="https://wa.me/919876543210?text=Hello%2C%20I%20would%20like%20to%20know%20about%20your%20mobile%20shop."
+    aria-label="Chat on WhatsApp"
+  >
+    💬
+  </a>
+
+
+  <script>
+    // Mobile menu
+    function toggleMenu() {
+      document.getElementById("nav").classList.toggle("active");
+    }
+
+    // Close mobile menu after clicking a link
+    document.querySelectorAll("#nav a").forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("nav").classList.remove("active");
+      });
+    });
+
+    // Current year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
